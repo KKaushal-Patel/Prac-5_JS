@@ -1,0 +1,49 @@
+.users {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .col1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 10px;
+    width: 320px;
+  }
+  .col1 img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-right: 13px;
+  }
+  .col1 .name {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .col1 .email{
+    font-size: 0.9rem;
+  }
+  .status_dropdown,
+  .access_dropdown {
+    width: 200px;
+  }
+  .btn {
+    background-color: #edf2f5;
+  }
+  .btn:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+  .icon{
+    margin-left: 10px;
+    width:100px;
+  }
+  .select{
+    outline: none;
+    border: 0;
+    background-color: #f2f2f2;
+    padding: 6px;
+    border-radius: 3px;
+  }
