@@ -8,8 +8,8 @@
   box-shadow: rgb(229 229 229 / 10%) 2px 5px 1px 1px,
     rgb(176 176 189 / 25%) 3px 2px 7px 0px, rgb(34 34 34 / 25%) 3px 2px 7px 0px;
     position: fixed;
-    right: 6%;
-    top: 19%;
+    right: 2%;
+    top: 15%;
 }
 .message_card{
   height: 200px;
@@ -21,7 +21,7 @@
   box-shadow: rgb(229 229 229 / 10%) 2px 5px 1px 1px,
     rgb(176 176 189 / 25%) 3px 2px 7px 0px, rgb(34 34 34 / 25%) 3px 2px 7px 0px;
     position: fixed;
-    right: 6%;
+    right: 2%;
     top: 29%;
 }
 .card_inner,
@@ -31,29 +31,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.hover_message{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  
-}
-.hover_message h3{
-  color: mix(#fff, #e91e63, 85%);
-  font-size: 1.4rem;
-	font-weight: 900;
-	text-shadow: 
-		-0.0075em 0.0075em 0 mix(#fff, #e91e63, 94%),
-		0.005em 0.005em 0 mix(#fff, #e91e63, 60%),
-		0.01em 0.01em 0 mix(#fff, #e91e63, 62%), 
-		0.015em 0.015em mix(#fff, #e91e63, 64%), 
-		0.02em 0.02em 0 mix(#fff, #e91e63, 66%), 
-		0.025em 0.025em 0 mix(#fff, #e91e63, 68%),
-		0.03em 0.03em 0 mix(#fff, #e91e63, 70%),
-		0.035em 0.035em 0 mix(#fff, #e91e63, 72%);
 }
 .CardHeader {
   width: 100%;
@@ -70,21 +47,22 @@
 .CardHeader h2, .userActive {
   font-size: 0.9rem;
   margin: 6px 0;
+  font-weight: 600;
 }
 .userActive{
   display:flex;
 }
 .activeStatus{
-  height: 5px;
-  width: 5px;
+  height: 6px;
+  width: 6px;
   border-radius: 50%;
-  background-color: green;
-  /* margin-top: 4px; */
-  margin-left: 6px;
+  background-color: #1cd31c;
+  margin-left: 4px;
 }
 
 .CardHeader p {
   font-size: 0.8rem;
+  margin-top: -4px;
 }
 p {
   margin-bottom: 0;
@@ -141,3 +119,26 @@ meter::-webkit-meter-optimum-value {
 .dataRight p {
   font-size: 0.8rem;
 }
+/* .hover_message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  
+}
+.hover_message h3{
+  color: mix(#fff, #e91e63, 85%);
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-shadow: 
+    -0.0075em 0.0075em 0 mix(#fff, #e91e63, 94%),
+    0.005em 0.005em 0 mix(#fff, #e91e63, 60%),
+    0.01em 0.01em 0 mix(#fff, #e91e63, 62%), 
+    0.015em 0.015em mix(#fff, #e91e63, 64%), 
+    0.02em 0.02em 0 mix(#fff, #e91e63, 66%), 
+    0.025em 0.025em 0 mix(#fff, #e91e63, 68%),
+    0.03em 0.03em 0 mix(#fff, #e91e63, 70%),
+    0.035em 0.035em 0 mix(#fff, #e91e63, 72%);
+} */

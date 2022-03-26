@@ -1,7 +1,76 @@
+import { act } from "react-dom/test-utils";
+import {
+  FETCH_USER_SUCCESS,
+  MOUSER_HOVER,
+  ON_MOUSE_LEAVE,
+  REMOVE_USER,
+  IS_USER_ACTIVE,
+} from "./actionTypes";
+
 const initialUsersState = {
   selectedId: null,
-  users: [
-    {
+  isActive: false,
+  users: [],
+};
+
+const reducer = (state = initialUsersState, action) => {
+  switch (action.type) {
+    case FETCH_USER_SUCCESS:
+      // console.log(action.payload);
+      return {
+        ...state,
+        users: action.payload,
+      };
+
+    case MOUSER_HOVER:
+      return {
+        ...state,
+        selectedId: action.payload,
+      };
+
+    case ON_MOUSE_LEAVE:
+      return {
+        ...state,
+        selectedId: null,
+      };
+    case IS_USER_ACTIVE:
+      // console.log(action.payload);
+      let active_user = state.users.find((user) => user.id === action.payload);
+    active_user.isActive = !(active_user.isActive);
+    console.log(active_user);
+      return {
+        ...state,
+        isActive: active_user.isActive,
+        selectedId: active_user.id
+      };
+
+    case REMOVE_USER:
+      let newId = state.selectedId;
+      if (newId) {
+        if (newId === action.payload) {
+          newId = null;
+        }
+      }
+      let filterUsers = [
+        ...state.users.filter((data) => {
+          return data.id !== action.payload;
+        }),
+      ];
+
+      return {
+        ...state,
+        users: filterUsers,
+        selectedId: newId,
+      };
+
+    default:
+      return state;
+  }
+};
+export default reducer;
+
+/*  
+{
       id: 0,
       email: "george.bluth@reqres.in",
       first_name: "George",
@@ -111,37 +180,5 @@ const initialUsersState = {
       clicksReviewed: "3,333",
       monthlyClicks: "1000",
     },
-  ],
-};
 
-const hoverHandlerReducer = (state = initialUsersState, action) => {
-  if (action.type === "onMouseOver") {
-    return {
-      ...state,
-      selectedId: action.payload,
-    };
-  }
-  if (action.type === "removeUser") {
-    let filterUsers = [...state.users ];
-    let newId = state.selectedId;
-
-    if (newId) {
-      if (newId === action.payload) {
-        newId = null;
-      } else {
-        // if(newId !== null)
-        newId--;
-      }
-    }
-     filterUsers = filterUsers.filter((data) => {
-      return (data.id !== action.payload);
-    });
-
-    return {
-      ...state,
-      users: filterUsers,
-      selectedId: newId,
-    };
-  } else return state;
-};
-export default hoverHandlerReducer;
+*/

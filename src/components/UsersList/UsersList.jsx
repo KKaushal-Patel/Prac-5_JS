@@ -13,17 +13,11 @@ const UsersList = () => {
           <div>Status</div>
           <div>Access</div>
         </div>
-        {users.map((user,index) => {
+        {users.map((user) => {
           return (
             <UserListItems
               key={user.id}
-              id={user.id}
-              fname={user.first_name}
-              lname={user.last_name}
-              email={user.email}
-              isOwner={user.isOwner}
-              isActive={user.isActive}
-              img={user.avatar}
+              user={user}
             />
           );
         })}
